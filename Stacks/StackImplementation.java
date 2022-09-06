@@ -6,7 +6,11 @@ public class StackImplementation {
         s1.push(24);
         s1.push(48);
 
-        s1.pop();
+        System.out.println("the item popped is "+ s1.pop());
+        //System.out.println("the item popped is "+ s1.pop());
+        //System.out.println("the item popped is "+ s1.pop());
+        System.out.println("the topmost element is "+s1.peek());
+
         s1.display();
     }
 }
@@ -17,7 +21,7 @@ class Stacks{
     int[] st = new int[MAX];
 
     public void push(int n){
-        if(top >= MAX){
+        if(top >= MAX-1){
             System.out.println("The stack has overflown");
         }
         else {
@@ -34,11 +38,25 @@ class Stacks{
         return st[top--];
     }
 
+    public int peek(){
+        if(top<0){
+            System.out.println("the stack is empty ");
+            return 0;
+        }
+        return st[top];
+    }
+
 
     public void display(){
-        for (int i = 0; i <=top ; i++) {
-            System.out.print(st[i] + " ");
-
+        if (top <0){
+            System.out.println("the stack is empty");
         }
+        else{
+            for (int i = 0; i <=top ; i++) {
+                System.out.print(st[i] + " ");
+
+            }
+        }
+
     }
 }
