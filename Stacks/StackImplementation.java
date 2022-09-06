@@ -12,6 +12,9 @@ public class StackImplementation {
         System.out.println("the topmost element is "+s1.peek());
 
         s1.display();
+        System.out.println();
+        System.out.println("the size of the stack is "+s1.length());
+        System.out.println("the stack is empty: "+s1.isEmpty());
     }
 }
 
@@ -44,6 +47,17 @@ class Stacks{
             return 0;
         }
         return st[top];
+    }
+
+    public int length(){
+        return top+1;
+    }
+
+    public boolean isEmpty(){
+        if(top > 0){
+            return false;
+        }
+        return true;
     }
 
 
