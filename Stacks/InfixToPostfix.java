@@ -49,7 +49,7 @@ public class InfixToPostfix {
     }
 
     public static int prec(char symbol){
-        if (symbol == '+' || symbol =='-'){
+        if (symbol == '+' || symbol == '-'){
             return 1;
         }
         else if (symbol == '*' || symbol =='/' || symbol == '%') {
