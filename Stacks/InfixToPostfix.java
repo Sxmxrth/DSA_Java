@@ -1,8 +1,40 @@
 import java.util.Scanner;
 
 public class InfixToPostfix {
+    static Stack operators = new Stack();
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+        System.out.println("enter the expression in infix: ");
+        String infix = sc.nextLine();
+        //String postfix = "";
+        System.out.println("the expression in postfix is: "+);
+
+
+    }
+
+    public static String toPostfix(String infix){
+        char symbol;
+        String postfix = "";
+        for (int i = 0; i < infix.length() ; i++) {
+            symbol = infix.charAt(i);
+            if(Character.isAlphabetic(symbol)){
+                postfix = postfix + symbol;
+            }
+            else if(symbol == '('){
+                operators.push(symbol);
+
+            }
+            else if (symbol == ')') {
+                while(operators.peek() != '('){
+                    postfix = postfix + operators.pop();
+                }
+                operators.pop();
+
+            }
+
+
+        }
 
     }
 }
