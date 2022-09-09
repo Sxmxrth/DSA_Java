@@ -2,13 +2,16 @@ import java.util.*;
 public class StackImplementation {
     public static void main(String[] args) {
         Stacks s1 = new Stacks();
+
         s1.push(13);
         s1.push(24);
         s1.push(48);
 
         System.out.println("the item popped is "+ s1.pop());
+
         //System.out.println("the item popped is "+ s1.pop());
         //System.out.println("the item popped is "+ s1.pop());
+
         System.out.println("the topmost element is "+s1.peek());
 
         s1.display();
