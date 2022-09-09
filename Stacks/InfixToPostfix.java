@@ -5,11 +5,10 @@ public class InfixToPostfix {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter the expression in infix: ");
+        System.out.print("enter the expression in infix: ");
         String infix = sc.nextLine();
         //String postfix = "";
-        System.out.println("the expression in postfix is: "+);
-
+        System.out.println("the expression in postfix is: " + toPostfix(infix));
 
     }
 
@@ -18,24 +17,45 @@ public class InfixToPostfix {
         String postfix = "";
         for (int i = 0; i < infix.length() ; i++) {
             symbol = infix.charAt(i);
-            if(Character.isAlphabetic(symbol)){
+            if(Character.isLetter(symbol)){
                 postfix = postfix + symbol;
             }
+
             else if(symbol == '('){
                 operators.push(symbol);
-
             }
+
             else if (symbol == ')') {
                 while(operators.peek() != '('){
                     postfix = postfix + operators.pop();
                 }
                 operators.pop();
-
             }
 
-
+            else {
+                while(!operators.isEmpty() && !(operators.peek() == '(') && prec(symbol) <= prec(operators.peek())){
+                    postfix = postfix + operators.pop();
+                    operators.push(symbol);
+                }
+            }
         }
 
+        while (!operators.isEmpty()){
+            postfix = postfix + operators.pop();
+        }
+
+        return postfix;
+
+    }
+
+    public static int prec(char symbol){
+        if (symbol == '+' || symbol =='-'){
+            return 1;
+        }
+        else if (symbol == '*' || symbol =='/' || symbol == '%') {
+            return 2;
+        }
+        return 0;
     }
 }
 
