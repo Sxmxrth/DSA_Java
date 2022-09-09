@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class InfixToPostfix {
     static Stack operators = new Stack();
@@ -33,7 +33,7 @@ public class InfixToPostfix {
             }
 
             else {
-                while(!operators.isEmpty() && !(operators.peek() == '(') && prec(symbol) <= prec(operators.peek())){
+                while(!operators.isEmpty() && (operators.peek() != '(') && (prec(symbol) <= prec(operators.peek()))){
                     postfix = postfix + operators.pop();
                     operators.push(symbol);
                 }
