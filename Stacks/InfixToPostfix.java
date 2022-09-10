@@ -15,7 +15,7 @@ public class InfixToPostfix {
     public static String toPostfix(String infix){
         char symbol;
         String postfix = "";
-        for (int i = 0; i < infix.length() ; i++) {
+        for (int i = 0; i < infix.length() ; ++i) {
             symbol = infix.charAt(i);
             if(Character.isLetter(symbol)){
                 postfix = postfix + symbol;
@@ -33,10 +33,10 @@ public class InfixToPostfix {
             }
 
             else {
-                while(!operators.isEmpty() && (operators.peek() != '(') && (prec(symbol) <= prec(operators.peek()))){
+                while(!operators.isEmpty() && !(operators.peek() == '(') && (prec(symbol) <= prec(operators.peek()))){
                     postfix = postfix + operators.pop();
-                    operators.push(symbol);
                 }
+                operators.push(symbol);
             }
         }
 
@@ -72,6 +72,7 @@ class Stack{
         else {
             ch[++top] = a;
         }
+
     }
 
     public char pop(){
