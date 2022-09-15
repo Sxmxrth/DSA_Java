@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class PostfixToInfix {
     static Stack2 inf = new Stack2();
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         System.out.print("enter a Postfix string: ");
         String postfix = sc.nextLine();
