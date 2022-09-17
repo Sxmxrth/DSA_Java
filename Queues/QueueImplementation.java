@@ -7,8 +7,10 @@ public class QueueImplementation {
         queue.enqueue(7);
         queue.enqueue(1);
 
+        //System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
+        System.out.println();
+        System.out.println(queue.peek());
 
         System.out.println();
         queue.display();
@@ -66,6 +68,10 @@ class Queue{
             return element;
         }
 
+    }
+
+    public int peek(){
+        return q[rear];
     }
 
     public void display(){
