@@ -71,7 +71,7 @@ class Queue{
     }
 
     public int peek(){
-        return q[rear];
+        return q[front];
     }
 
     public void display(){
