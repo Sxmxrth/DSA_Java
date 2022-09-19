@@ -1,5 +1,17 @@
 public class CircularQueue {
     public static void main(String[] args) {
+        CQueue c = new CQueue();
+
+        c.enqueue(10);
+        c.enqueue(1);
+        c.enqueue(6);
+        c.enqueue(12);
+        c.enqueue(8);
+
+        c.dequeue();
+        c.dequeue();
+
+        c.display();
 
     }
 }
@@ -69,6 +81,11 @@ class CQueue{
     }
 
     public void display(){
-
+        if (isEmpty()){
+            System.out.println("the queue is empty");
+        }
+        while (front != rear+1){
+            System.out.println(cqueue[front++]);
+        }
     }
 }
