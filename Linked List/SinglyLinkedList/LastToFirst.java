@@ -1,3 +1,5 @@
+package SinglyLinkedList;
+
 public class LastToFirst {
     public static void main(String[] args) {
 

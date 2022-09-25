@@ -1,3 +1,5 @@
+package SinglyLinkedList;
+
 import java.util.*;
 public class searchingLL {
     public static void main(String[] args) {
