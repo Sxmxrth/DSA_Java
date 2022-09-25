@@ -17,9 +17,11 @@ public class LinkedList {
     Node head;
     // to push an element in the front of the linked list*******
     public void push(int data){
+
         Node new_node = new Node(data); //gives the data to the new node built.
         new_node.next = head; // the next of the new node gets the value of the head.
         head = new_node; // the head gets the address of the new node.
+
     }
 
     public int getCount(){
