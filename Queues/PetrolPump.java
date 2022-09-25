@@ -12,7 +12,7 @@ public class PetrolPump {
     }
 
     public static int tour(int n){
-        int[][] pp = { {4,6}, {6,5}, {7,3}, {4,5} };
+        int[][] pp = { {4,6}, {2,5}, {7,3}, {4,5} };
         int i, acc = 0;
         int start = 0;
         int end = 1;
