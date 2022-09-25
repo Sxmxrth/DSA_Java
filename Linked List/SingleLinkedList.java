@@ -10,10 +10,15 @@ public class SingleLinkedList {
         ll.push(12);
         ll.push(-4);
 
-        ll.InsertAfter(ll.head.next, 14);
+        ll.InsertAfter(ll.head.next.next, 14);
         ll.append(25);
         System.out.println("the number of elements in the linked list are " + ll.getCount());
 
+        ll.printList();
+        System.out.println();
+
+        ll.deleteNode(4);
+        ll.deleteNode(25);
         ll.printList();
 
     }
@@ -62,6 +67,23 @@ public class SingleLinkedList {
         new_node.next = null;
         last.next = new_node;
 
+    }
+
+    public void deleteNode(int key){
+
+        Node temp = head, prev = null;
+
+        if(temp.data == key){
+            head = temp.next;
+            return;
+        }
+
+        while(temp.data != key){
+            prev = temp;
+            temp = temp.next;
+        }
+
+        prev.next = temp.next;
     }
 
     public void printList(){
