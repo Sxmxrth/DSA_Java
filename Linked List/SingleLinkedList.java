@@ -86,6 +86,17 @@ public class SingleLinkedList {
         prev.next = temp.next;
     }
 
+    public boolean SearchInLL(int key){
+        Node temp = head;
+        while (temp.data != key && temp.next != null){
+            temp = temp.next;
+        }
+        if (temp.data == key){
+            return true;
+        }
+        return false;
+    }
+
     public void printList(){
 
         Node tnode = head;
