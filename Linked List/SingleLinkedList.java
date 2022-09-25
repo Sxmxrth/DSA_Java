@@ -91,10 +91,7 @@ public class SingleLinkedList {
         while (temp.data != key && temp.next != null){
             temp = temp.next;
         }
-        if (temp.data == key){
-            return true;
-        }
-        return false;
+        return temp.data == key;
     }
 
     public void printList(){
