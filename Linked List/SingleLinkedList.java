@@ -94,6 +94,18 @@ public class SingleLinkedList {
         return temp.data == key;
     }
 
+    public void lastToFirst(){
+        Node temp = head, prev = null;
+        while (temp.next != null){
+            prev = temp;
+            temp = temp.next;
+        }
+        temp.next = head;
+        head = temp;
+        assert prev != null;
+        prev.next = null;
+    }
+
     public void printList(){
 
         Node tnode = head;
