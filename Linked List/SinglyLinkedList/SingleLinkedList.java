@@ -25,14 +25,30 @@ public class SingleLinkedList {
 
     }
 
-    Node head;
+    Node head = null, tail= null;
     // to push an element in the front of the linked list*******
     public void push(int data){
 
-        Node new_node = new Node(data); //gives the data to the new node built.
-        new_node.next = head; // the next of the new node gets the value of the head.
-        head = new_node; // the head gets the address of the new node.
+//        Node new_node = new Node(data); //gives the data to the new node built.
+//        new_node.next = head; // the next of the new node gets the value of the head.
+//        head = new_node; // the head gets the address of the new node.
 
+        Node new_node = new Node(data);
+
+        if(head == null){
+
+            head = new_node;
+            tail = new_node;
+
+        }
+
+        else {
+
+            tail.next = new_node;
+            tail = new_node;
+            new_node.next = null;
+
+        }
     }
 
     public int getCount(){
