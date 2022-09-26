@@ -10,8 +10,8 @@ public class CircularLL {
         cll.add(0);
         cll.add(1);
 
-        cll.InsertAfter(cll.head.next.next.next, 100 );
-
+        //cll.InsertAfter(cll.head.next.next.next, 100 );
+        cll.deleteNode(1);
         cll.display();
 
     }
@@ -45,6 +45,20 @@ public class CircularLL {
         new_node.next = prev_node.next;
         prev_node.next = new_node;
 
+    }
+
+    public void deleteNode(int key){
+        Node temp = head, prev = tail ;
+        if(temp.data == key){
+            prev.next = temp.next;
+            head = prev;
+            return;
+        }
+        while (temp.data != key){
+            prev = temp;
+            temp = temp.next;
+        }
+        prev.next = temp.next;
     }
 
     public void display(){
