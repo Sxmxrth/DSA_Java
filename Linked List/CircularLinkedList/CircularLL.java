@@ -10,6 +10,8 @@ public class CircularLL {
         cll.add(0);
         cll.add(1);
 
+        cll.InsertAfter(cll.head.next.next.next, 100 );
+
         cll.display();
 
     }
@@ -34,6 +36,14 @@ public class CircularLL {
             new_node.next = head; // the tail (new node) will point to the head since circular;
 
         }
+
+    }
+
+    public void InsertAfter(Node prev_node, int key){
+
+        Node new_node = new Node(key);
+        new_node.next = prev_node.next;
+        prev_node.next = new_node;
 
     }
 
