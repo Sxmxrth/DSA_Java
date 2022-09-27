@@ -47,9 +47,25 @@ public class PolynomialExp {
         }
     }
 
-    public void add(PolynomialExp p1, PolynomialExp p2){
-        Node1 temp = head;
+    public void add(PolynomialExp p1, PolynomialExp p2, PolynomialExp ans){
+        Node1 temp1 = p1.head;
+        Node1 temp2 = p2.head;
 
+        while(temp1 != null){
+
+            if(temp1.exp == temp2.exp){
+
+                ans.push((temp1.coeff + temp2.coeff), temp1.exp);
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+
+            }
+
+
+
+
+
+        }
 
     }
 
