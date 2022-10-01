@@ -11,7 +11,10 @@ public class DoublyLL {
         d.push(-9);
         d.push(10);
 
-        d.InsertAfter(d.head.next.next.next.next, 100);
+        //d.InsertAfter(null, 100);
+
+        d.Delete(-9);
+        d.Delete(12);
 
         d.display();
 
@@ -68,6 +71,32 @@ public class DoublyLL {
         new_node.prev = prev_node.next.prev;
         prev_node.next.prev = new_node;
         prev_node.next = new_node;
+
+    }
+
+    public void Delete(int key){
+
+        Node temp = head;
+        while ( temp != null && temp.data != key){
+            temp = temp.next;
+        }
+
+        if(temp.next == null){
+
+            temp.prev.next = null;
+            tail = temp.prev;
+            return;
+        }
+        else if (temp.prev == null) {
+
+            temp.next.prev = null;
+            head = temp.next;
+            return;
+
+        }
+
+        temp.prev.next = temp.next;
+        temp.next.prev = temp.prev;
 
     }
 
