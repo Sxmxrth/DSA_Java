@@ -11,6 +11,8 @@ public class DoublyLL {
         d.push(-9);
         d.push(10);
 
+        d.InsertAfter(d.head.next.next.next.next, 100);
+
         d.display();
 
     }
@@ -36,6 +38,37 @@ public class DoublyLL {
             tail.next = null;
 
         }
+    }
+
+    public void InsertAfter(Node prev_node, int key){
+
+        Node new_node = new Node(key);
+
+        if( prev_node == null ) {
+
+            new_node.next = head;
+            head.prev = new_node;
+            head = new_node;
+            return;
+
+        }
+
+        else if(prev_node.next == null){
+
+            new_node.prev = prev_node;
+            prev_node.next = new_node;
+            new_node.next = null;
+            tail = new_node;
+            return;
+
+        }
+
+
+        new_node.next = prev_node.next;
+        new_node.prev = prev_node.next.prev;
+        prev_node.next.prev = new_node;
+        prev_node.next = new_node;
+
     }
 
     public void display(){
