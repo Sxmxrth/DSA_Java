@@ -134,6 +134,37 @@ public class DoublyLL {
 
     }
 
+    public void EvenFirst(){
+
+        DoublyLL dll2 = new DoublyLL();
+
+        Node temp = head;
+
+        while ( temp != null ){
+            if(temp.data % 2 == 0){
+                dll2.push(temp.data);
+                temp = temp.next;
+            }
+            else {
+                temp = temp.next;
+            }
+        }
+
+        temp = head;
+        while ( temp != null ){
+            if(temp.data % 2 != 0){
+                dll2.push(temp.data);
+                temp = temp.next;
+            }
+            else {
+                temp = temp.next;
+            }
+
+        }
+
+        dll2.display();
+    }
+
     public void display(){
 
         Node temp = head;
