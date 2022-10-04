@@ -100,6 +100,40 @@ public class DoublyLL {
 
     }
 
+    public void RemoveDup(){
+        Node temp = head;
+        Node pointer = temp.next;
+
+        while ( temp != null ){
+
+            while( pointer != null ) {
+
+                if (temp.data == pointer.data){
+
+                    if(pointer.next == null){
+                        pointer.prev.next = null;
+                        tail = pointer.prev;
+                        return;
+                    }
+
+                    pointer.prev.next = pointer.next;
+                    pointer.next.prev = pointer.prev;
+                    pointer = pointer.next;
+
+                }
+                else {
+                    pointer = pointer.next;
+                }
+
+            }
+
+            temp = temp.next;
+            pointer = temp.next;
+
+        }
+
+    }
+
     public void display(){
 
         Node temp = head;
