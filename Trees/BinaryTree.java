@@ -21,7 +21,7 @@ public class BinaryTree {
 
         b.findMax(root);
 
-
+        b.predecessor(root, 23);
 
     }
 
@@ -81,6 +81,37 @@ public class BinaryTree {
         else {
             findMax(root.right);
         }
+
+    }
+
+    public void predecessor(Node root, int target){
+
+        if (root == null){
+            return;
+        }
+
+        else if(root.key == target){
+            Node temp = root.left;
+            while (temp.right != null){
+                temp = temp.right;
+            }
+
+            System.out.println(temp.key);
+        }
+
+        if(root.key > target){
+            predecessor(root.left, target);
+        }
+
+        else {
+            predecessor(root.right, target);
+        }
+
+    }
+
+    public void successor(Node root, int target){
+
+
 
     }
 
