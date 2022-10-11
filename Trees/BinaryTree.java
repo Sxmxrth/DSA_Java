@@ -21,7 +21,8 @@ public class BinaryTree {
 
         b.findMax(root);
 
-        b.predecessor(root, 23);
+        b.predecessor(root, 5);
+        b.successor(root, 6);
 
     }
 
@@ -92,6 +93,10 @@ public class BinaryTree {
 
         else if(root.key == target){
             Node temp = root.left;
+            if (temp == null){
+                System.out.println("there is no predecessor");
+                return;
+            }
             while (temp.right != null){
                 temp = temp.right;
             }
@@ -111,6 +116,32 @@ public class BinaryTree {
 
     public void successor(Node root, int target){
 
+        if (root == null){
+            return;
+        }
+
+        if (root.key > target){
+            successor(root.left, target);
+        }
+
+        else if (root.key < target) {
+            successor(root.right, target);
+        }
+
+        if(root.key == target){
+
+            Node temp = root.right;
+            if (temp == null){
+                System.out.println("there is no predecessor");
+                return;
+            }
+            while (temp.left != null){
+                temp = temp.left;
+            }
+
+            System.out.println(temp.key);
+
+        }
 
 
     }
@@ -127,7 +158,7 @@ public class BinaryTree {
 
 class Node{
     int key;
-    Node left, right;
+    Node left, right, parent;
 
     Node(int d){
         key = d;
