@@ -14,6 +14,7 @@ public class BinaryTree {
         b.insert(root, 9);
 
         b.InOrder(root);
+        System.out.println();
 
         System.out.println(b.search(root, 12));
 
@@ -149,7 +150,7 @@ public class BinaryTree {
     public void InOrder(Node node){
         if(node != null){
             InOrder(node.left);
-            System.out.println(node.key + " ");
+            System.out.print(node.key + " ");
             InOrder(node.right);
         }
     }
