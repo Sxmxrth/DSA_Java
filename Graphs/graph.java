@@ -1,4 +1,5 @@
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class graph {
@@ -41,9 +42,10 @@ public class graph {
         addToList(adjList, 3, 4);
         addToList(adjList, 3, 1);
         //System.out.println(adjList[5].next.next.value);
-
+        System.out.println("DFS IS: ");
         DFS(1);
         System.out.println(" ");
+        System.out.println("BFS IS: O");
         BFS(2);
 
     }

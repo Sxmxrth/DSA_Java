@@ -2,7 +2,7 @@ public class BinaryTree {
     public static void main(String[] args) {
 
         BinaryTree b = new BinaryTree();
-        Node root = new Node(5);
+        Nodes root = new Nodes(5);
 
         b.insert(root, 4);
         b.insert(root, 23);
@@ -27,14 +27,14 @@ public class BinaryTree {
 
     }
 
-    public void insert(Node node, int value){
+    public void insert(Nodes node, int value){
 
         if(value < node.key){
             if(node.left != null){
                 insert(node.left, value);
             }
             else {
-                node.left = new Node(value);
+                node.left = new Nodes(value);
             }
         }
 
@@ -43,13 +43,13 @@ public class BinaryTree {
                 insert(node.right, value);
             }
             else{
-                node.right = new Node(value);
+                node.right = new Nodes(value);
             }
         }
 
     }
 
-    public Node search(Node root, int target){
+    public Nodes search(Nodes root, int target){
 
         if(root == null || root.key == target){
             return root;
@@ -63,7 +63,7 @@ public class BinaryTree {
 
     }
 
-    public void findMin(Node root){
+    public void findMin(Nodes root){
 
         if(root.left == null){
             System.out.println("Min is " + root.key);
@@ -74,7 +74,7 @@ public class BinaryTree {
         }
     }
 
-    public void findMax(Node root){
+    public void findMax(Nodes root){
 
         if (root.right == null){
             System.out.println("Max is " + root.key);
@@ -86,14 +86,14 @@ public class BinaryTree {
 
     }
 
-    public void predecessor(Node root, int target){
+    public void predecessor(Nodes root, int target){
 
         if (root == null){
             return;
         }
 
         else if(root.key == target){
-            Node temp = root.left;
+            Nodes temp = root.left;
             if (temp == null){
                 System.out.println("there is no predecessor");
                 return;
@@ -115,7 +115,7 @@ public class BinaryTree {
 
     }
 
-    public void successor(Node root, int target){
+    public void successor(Nodes root, int target){
 
         if (root == null){
             return;
@@ -131,7 +131,7 @@ public class BinaryTree {
 
         if(root.key == target){
 
-            Node temp = root.right;
+            Nodes temp = root.right;
             if (temp == null){
                 System.out.println("there is no predecessor");
                 return;
@@ -147,7 +147,7 @@ public class BinaryTree {
 
     }
 
-    public void InOrder(Node node){
+    public void InOrder(Nodes node){
         if(node != null){
             InOrder(node.left);
             System.out.print(node.key + " ");
@@ -157,11 +157,11 @@ public class BinaryTree {
 
 }
 
-class Node{
+class Nodes{
     int key;
-    Node left, right, parent;
+    Nodes left, right, parent;
 
-    Node(int d){
+    Nodes(int d){
         key = d;
         left = right = null;
     }

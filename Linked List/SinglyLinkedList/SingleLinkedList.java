@@ -4,6 +4,8 @@ public class SingleLinkedList {
     public static void main(String[] args) {
         SingleLinkedList ll = new SingleLinkedList();
 
+        Node x =new Node(1);
+
         ll.push(4);
         ll.push(5);
         ll.push(2);
