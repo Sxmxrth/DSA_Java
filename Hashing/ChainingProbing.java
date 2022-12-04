@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class chaining {
+public class ChainingProbing {
     static hashNode[] arr = new hashNode[7];
     static int[] qp = new int[5];
     public static void main(String[] args) {
@@ -16,7 +16,9 @@ public class chaining {
         System.out.println(searchChaining(arr, 7));
 
         deleteNode(arr, 12);
-        System.out.println(arr[5].value);
+        displayChaining(arr);
+
+        System.out.println("---------------------------------");
 
         quadraticProbing(qp,2);
         quadraticProbing(qp,4);
@@ -24,6 +26,10 @@ public class chaining {
         quadraticProbing(qp,9);
         quadraticProbing(qp,5);
 
+        System.out.println(Arrays.toString(qp));
+        System.out.println(searchProbing(qp, 78));
+
+        deleteProbing(qp, 5);
         System.out.println(Arrays.toString(qp));
 
     }
@@ -84,6 +90,27 @@ public class chaining {
         }
     }
 
+    public static void displayChaining(hashNode[] arr){
+        for (int i = 0; i < 7; i++) {
+
+            hashNode temp = arr[i];
+            if (temp != null){
+                System.out.print(temp.value + " ");
+            }
+            else {
+                System.out.print(-1);
+                System.out.println();
+                continue;
+            }
+            while (temp.next != null){
+                temp = temp.next;
+                System.out.print(temp.value + " ");
+            }
+            System.out.println();
+
+        }
+    }
+
     public static void quadraticProbing(int[] arr, int value){
         for (int i = 0; i < 7; i++) {
             int possibleKey = hashFunction(value + i + 2*(i*i), 5);
@@ -92,6 +119,24 @@ public class chaining {
                 break;
             }
         }
+    }
+
+    public static int searchProbing(int[] arr, int value){
+        for (int i = 0; i < 7; i++) {
+            int possibleKey = hashFunction(value + i + 2*(i*i), 5);
+            if (arr[possibleKey] == value){
+                return possibleKey;
+            }
+        }
+        return -1;
+    }
+
+    public static void deleteProbing(int[] arr, int value){
+        if (searchProbing(arr, value) != -1){
+            arr[searchProbing(arr, value)] = -1;
+            return;
+        }
+        System.out.println("Cant delete because not found");
     }
 }
 
