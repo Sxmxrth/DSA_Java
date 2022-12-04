@@ -73,11 +73,17 @@ public class graph {
 
         graphNode temp = adjList[v];
         while (temp.next != null ){
+
             int n = temp.next.value;
+
             if (!visited[n]){
+
                 DFSUtil(n, visited);
+
             }
+
             temp = temp.next;
+
         }
     }
 
@@ -175,6 +181,4 @@ class Queues {
             System.out.println(q[i]);
         }
     }
-
-
 }
