@@ -13,8 +13,6 @@ public class AVL {
 
         a.inOrder(root);
 
-
-
     }
 
     public int height(AVLNode node){
