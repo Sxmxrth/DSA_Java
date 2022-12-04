@@ -258,7 +258,7 @@ public class library_management
 
         int i=0;
 
-        while(e1==false)
+        while(!e1)
         {
             System.out.println("\n....................................." );
             System.out.println("1. Librarian Login. ");
@@ -289,7 +289,7 @@ public class library_management
                     {
                         System.out.println("Login succesfully.");
                         boolean e2=false;
-                        while(e2==false)
+                        while(!e2)
                         {
                             System.out.println("\n....................................." );
                             System.out.println("1. Add book. ");
