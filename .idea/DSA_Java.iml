@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Hashing" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/libraryManagement" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/kickstart" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/leetcode" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
