@@ -5,7 +5,7 @@ import java.util.*;
 public class graph {
     static int[][] adjMatrix = new int[7][7];
     static graphNode[] adjList = new graphNode[7];
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         addEdges(5,6);
         addEdges(5,3);
