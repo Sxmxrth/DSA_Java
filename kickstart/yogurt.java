@@ -1,11 +1,11 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class yogurt {
     public static void main(String[] args) {
-        int[] arr = {3,2,3,2,3};
+        int[] arr = {3,3,2,1,3,1,1};
         Arrays.sort(arr);
         //System.out.println(Arrays.toString(arr));
-        int k = 1;
+        int k = 2;
         System.out.println("The max number of yogurt consumed is " + maxYogurt(arr, k));
     }
 
