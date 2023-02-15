@@ -86,10 +86,7 @@ class Stack{
     }
 
     public boolean isEmpty(){
-        if(top < 0){
-            return true;
-        }
-        return false;
+        return top < 0;
     }
 
     public char peek(){

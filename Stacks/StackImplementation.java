@@ -7,17 +7,17 @@ public class StackImplementation {
         s1.push(24);
         s1.push(48);
 
-        System.out.println("the item popped is "+ s1.pop());
+        System.out.println("the item popped is " + s1.pop());
 
         //System.out.println("the item popped is "+ s1.pop());
         //System.out.println("the item popped is "+ s1.pop());
 
-        System.out.println("the topmost element is "+s1.peek());
+        System.out.println("the topmost element is " + s1.peek());
 
         s1.display();
         System.out.println();
-        System.out.println("the size of the stack is "+s1.length());
-        System.out.println("the stack is empty: "+s1.isEmpty());
+        System.out.println("the size of the stack is " + s1.length());
+        System.out.println("the stack is empty: " + s1.isEmpty());
     }
 }
 

@@ -27,7 +27,7 @@ public class SingleLinkedList {
 
     }
 
-    Node head = null, tail= null;
+    Node head = null, tail = null;
     // to push an element in the front of the linked list*******
     public void push(int data){
 
@@ -41,6 +41,7 @@ public class SingleLinkedList {
 
             head = new_node;
             tail = new_node;
+            tail.next = null;
 
         }
 

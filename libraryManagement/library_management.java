@@ -18,8 +18,8 @@ class Student
     String book1,book2;
     int book_no,issuedbook;
 
-    Student(String name,int id_no,String Stream)
-    {
+    Student(String name,int id_no,String Stream) {
+
         this.name=name;
         this.id_no=id_no;
         this.Stream=Stream;
@@ -32,8 +32,8 @@ class Node
     String key;
     Node left, right;
 
-    public Node(String item)
-    {
+    public Node(String item) {
+
         key = item;
         left = null;
         right=null;
@@ -54,11 +54,16 @@ class finaldsa {
         }
 
         if (key.compareTo(root.key) < 0) //If book name < root then place it as left child
+        {
             root.left = insertRec(root.left, key);
+        }
         else if (key.compareTo(root.key) > 0) //If book name > root then place it as Right child
+        {
             root.right = insertRec(root.right, key);
-        else
+        }
+        else {
             System.out.println("error.");
+        }
 
         return root;
     }
@@ -117,20 +122,24 @@ class finaldsa {
     }
 
     Node deleteRec(Node root, String key) {
-        if (root == null) return root;
+        if (root == null){
+            return root;
+        }
 
         //If book name < root then search it at left side and delete
         if (key.compareTo(root.key) < 0)
             root.left = deleteRec(root.left, key);
             //If book name > root then search it at right side and delete
-        else if (key.compareTo(root.key) < 0)
+        else if (key.compareTo(root.key) > 0)
             root.right = deleteRec(root.right, key);
 
         else {
-            if (root.left == null)
+            if (root.left == null) {
                 return root.right;
-            else if (root.right == null)
+            }
+            else if (root.right == null) {
                 return root.left;
+            }
 
             root.key = minValue(root.right);
 
@@ -189,7 +198,9 @@ public class library_management
             int min_idx = i;
             for (int j = i+1; j < n; j++)
                 if (arr[j].id_no < arr[min_idx].id_no)//Sort according to ID number of student
+                {
                     min_idx = j;
+                }
 
             String temp1 = arr[min_idx].name;
             arr[min_idx].name = arr[i].name;
@@ -202,20 +213,21 @@ public class library_management
         }
     }
 
-    static void display(Student arr[])
-    {
-        for(int i=0;i<arr.length;i++)
-        {
+    static void display(Student arr[]) {
+
+        for(int i=0;i<arr.length;i++) {
+
             System.out.println("\nName of Student:" + arr[i].name);
             System.out.println("\nId of Student:" + arr[i].id_no);
             System.out.println("\nStream of Student:" + arr[i].Stream);
+
         }
+
     }
 
 
 
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
 
         Scanner input = new Scanner(System.in);
         finaldsa tree = new finaldsa();
@@ -224,9 +236,9 @@ public class library_management
         Calendar cal = Calendar.getInstance();
         Student[] array =new Student[3];
         //Add student Details
-        array[0]=new Student("Rajvi",1741078,"B.Tech-ICT");
-        array[1]=new Student("Krushna",1741086,"B.Tech-ICT");
-        array[2]=new Student("Kalagee",1741052,"B.Tech-ICT");
+        array[0]=new Student("Samarth",1741078,"B.Tech-AIML");
+        array[1]=new Student("Sujal",1741086,"B.Tech-DS");
+        array[2]=new Student("Devam",1741052,"B.Tech-CE");
         int[][] arr=new int[100][2];
 
         //Create file to store data of students.
@@ -266,7 +278,7 @@ public class library_management
             System.out.println("3. Exit. ");
             System.out.println("\n....................................." );
 
-            System.out.println("\nEnter Your choice:");
+            System.out.print("\nEnter Your choice: ");
             int ch1 = input.nextInt();
 
             switch(ch1)
@@ -281,10 +293,12 @@ public class library_management
                     System.out.println("\nEnter Password:" );
                     String pwd2= input.next();
 
-                    if(!id1.equals(id2))
+                    if(!id1.equals(id2)) {
                         System.out.println("Invalid Userid.");
-                    else if(!pwd1.equals(pwd2))
+                    }
+                    else if(!pwd1.equals(pwd2)) {
                         System.out.println("Invalid Password.");
+                    }
                     else
                     {
                         System.out.println("Login succesfully.");
@@ -302,7 +316,7 @@ public class library_management
 
                             System.out.println("\n....................................." );
 
-                            System.out.println("\nEnter Your choice:");
+                            System.out.print("\nEnter Your choice: ");
                             int ch2 = input.nextInt();
 
                             switch(ch2)
@@ -310,8 +324,7 @@ public class library_management
                                 case 1: 	//To add a book
 
                                     String line;
-                                    while((line = reader.readLine()) != null)
-                                    {
+                                    while((line = reader.readLine()) != null) {
 
                                         tree.insert(line);
                                         hashmapping.put(line, i);
@@ -322,21 +335,24 @@ public class library_management
 
                                     int o = 0;
                                     String number;
-                                    while((number = reader2.readLine()) != null)
-                                    {
-                                        int result = Integer.parseInt(number);
-                                        if(j!=o)
+                                    while((number = reader2.readLine()) != null) {
+
+                                        int result = Integer.valueOf(number);
+                                        if(j!=o) {
                                             arr[o][0] = result;
+                                        }
                                         o++;
+
                                     }
 
                                     int pq=0;
                                     String number1;
                                     while((number1 = reader3.readLine()) != null)
                                     {
-                                        int result1 = Integer.parseInt(number1);
-                                        if(j!=pq)
+                                        int result1 = Integer.valueOf(number1);
+                                        if(j!=pq) {
                                             arr[pq][1] = result1;
+                                        }
                                         pq++;
                                     }
 
@@ -344,12 +360,10 @@ public class library_management
                                     String name = input.next();
                                     boolean z1=tree.containsNode(name);
 
-                                    if(z1)
-                                    {
+                                    if(z1) {
                                         System.out.println("\nIt is already exists:");
                                     }
-                                    else
-                                    {
+                                    else {
                                         System.out.println("\nEnter quantity of book:");
                                         int quantity = input.nextInt();
                                         br1.write(name);
@@ -371,8 +385,7 @@ public class library_management
                                     String b1 = input.next();
 
                                     boolean x=tree.containsNode(b1);
-                                    if(x)
-                                    {
+                                    if(x) {
                                         tree.deleteKey(b1);
                                         hashmapping.remove(b1);
                                     }
@@ -384,8 +397,7 @@ public class library_management
                                     String b2 = input.next();
 
                                     boolean z=tree.containsNode(b2);
-                                    if(z)
-                                    {
+                                    if(z) {
                                         int a=hashmapping.get(b2);
                                         System.out.println("\nEnter quantity of book to add more:");
                                         int q = input.nextInt();
@@ -437,7 +449,7 @@ public class library_management
                         System.out.println("3. Exit");
                         System.out.println("\n....................................." );
 
-                        System.out.println("\nEnter Your choice:");
+                        System.out.print("\nEnter Your choice: ");
                         int ch3 = input.nextInt();
 
                         switch(ch3)
@@ -526,17 +538,18 @@ public class library_management
                                         if(y)
                                         {
 
-                                            if(array[ind].book1.equalsIgnoreCase(Rbook)==true)
-                                                array[ind].book1=null;
-                                            else
-                                                array[ind].book2=null;
+                                            if(array[ind].book1.equalsIgnoreCase(Rbook)==true) {
+                                                array[ind].book1 = null;
+                                            }
+                                            else {
+                                                array[ind].book2 = null;
+                                            }
 
                                             cal = Calendar.getInstance();
                                             Rday2=cal.getTime();
                                             //System.out.println(Rday2 + "&"+ Rday1);
 
-                                            if(Rday2.after(Rday1))
-                                            {
+                                            if(Rday2.after(Rday1)) {
                                                 System.out.println("Book is overdue.");
                                                 long diff=Rday2.getTime()-Rday1.getTime();
                                                 int noofdays=(int)(diff/(2000/**24*60*60*/));
@@ -545,8 +558,7 @@ public class library_management
                                                 double charge =noofdays*5;
                                                 System.out.println("Your charge is: " + charge + "Rs." );
                                             }
-                                            else
-                                            {
+                                            else {
                                                 System.out.println("Book is returned successfully.");
                                             }
 

@@ -12,6 +12,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Graphs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Hashing" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/libraryManagement" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Practice" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sorting" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
