@@ -1,0 +1,1 @@
+class MyThreadWay2 implements Runnable{    public void run(){        System.out.println("Run is overriden ");    }    public static void main(String[] args)    {   System.out.println("I am in main..");        MyThreadWay2 mtw2 = new MyThreadWay2();        Thread t2 = new Thread(mtw2);        t2.start();    }}

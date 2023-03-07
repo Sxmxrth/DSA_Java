@@ -17,6 +17,7 @@
       <sourceFolder url="file://$MODULE_DIR$/socket programming" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OS" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Dynamic Programming" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Threading" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

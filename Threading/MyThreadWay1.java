@@ -1,0 +1,1 @@
+class MyThreadWay1 extends Thread{    public void run(){        System.out.println("Overridden RUN method stat2");    }    public static void main(String[] args)    {        System.out.println("I'm in main method stat1");        MyThreadWay1 t1 = new MyThreadWay1();        t1.start();    }}
