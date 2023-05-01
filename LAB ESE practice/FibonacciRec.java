@@ -1,0 +1,1 @@
+public class FibonacciRec {    public static void main(String[] args) {        System.out.println(rec(5));    }    public static int rec(int n){        if(n<2){            return n;        }        return rec(n-1) + rec(n-2);    }}
