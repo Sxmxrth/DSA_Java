@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Dynamic Programming" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Threading" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LAB ESE practice" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Leetcode" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
